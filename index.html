@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WinConcept Industry – Production · Distribution · Technologie · Cybersécurité</title>
+  <meta name="description" content="WinConcept Industry accompagne artistes, entrepreneurs et entreprises au Cameroun : studio d'enregistrement, distribution digitale, marketing digital, sites web, cybersécurité." />
+  <meta name="keywords" content="studio enregistrement Cameroun, distribution musicale, marketing digital Cameroun, cybersécurité Cameroun, création site web Yaoundé Douala" />
+  <meta name="author" content="WinConcept Industry" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="WinConcept Industry – De l'idée au streaming" />
+  <meta property="og:description" content="Production. Management. Distribution. Technologie. Cybersécurité." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* inline extras */
+    .cyber-sub-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+    .cyber-sub-item { font-size: 0.78rem; color: rgba(255,255,255,0.5); padding-left: 14px; position: relative; }
+    .cyber-sub-item::before { content:'›'; position:absolute; left:0; color:var(--primary); }
+    .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+    .blog-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:var(--radius); overflow:hidden; transition:var(--transition); }
+    .blog-card:hover { border-color:rgba(0,183,243,0.25); transform:translateY(-6px); }
+    .blog-card-img { aspect-ratio:16/9; background:linear-gradient(135deg,rgba(0,183,243,0.2),rgba(0,0,0,0.5)); display:flex; align-items:center; justify-content:center; font-size:3rem; }
+    .blog-card-body { padding:28px; }
+    .blog-cat { font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--primary); margin-bottom:10px; }
+    .blog-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:1.05rem; margin-bottom:12px; line-height:1.4; }
+    .blog-excerpt { font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.7; margin-bottom:20px; }
+    .blog-meta { font-size:0.78rem; color:rgba(255,255,255,0.3); display:flex; gap:16px; }
+    @media(max-width:900px){ .blog-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar" aria-label="Navigation principale">
+  <div class="container nav-inner">
+
+    <a href="#" class="nav-logo" aria-label="WinConcept Industry – Accueil">
+      <img src="Winconcept Studios logo.png" alt="WinConcept Industry" onerror="this.style.display='none'" />
+      <div class="nav-logo-text">
+        WINCONCEPT
+        <span>INDUSTRY</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#divisions">Divisions</a></li>
+      <li><a href="#process">Processus</a></li>
+      <li><a href="#portfolio">Réalisations</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="https://api.whatsapp.com/send?phone=237656422854" target="_blank" rel="noopener" class="btn btn-primary" style="padding:12px 24px; font-size:0.85rem;">
+        Réserver une consultation
+      </a>
+    </div>
+
+    <button class="hamburger" aria-label="Menu mobile" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" role="dialog" aria-label="Menu de navigation">
+  <a href="#about">À propos</a>
+  <a href="#divisions">Nos divisions</a>
+  <a href="#process">Processus</a>
+  <a href="#portfolio">Réalisations</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
+  <a href="https://api.whatsapp.com/send?phone=237656422854" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin-top:16px;">
+    📲 WhatsApp
+  </a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home" aria-label="Section d'accueil">
+
+  <!-- Particle canvas -->
+  <canvas id="heroCanvas" style="position:absolute;inset:0;z-index:2;pointer-events:none;"></canvas>
+
+  <!-- Animated gradient bg -->
+  <div class="hero-gradient-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Cameroun · Yaoundé · Douala · International
+    </div>
+
+    <h1 class="hero-title">
+      WIN<span class="gradient-text">CONCEPT</span><br />INDUSTRY
+    </h1>
+
+    <p class="hero-sub">
+      Nous accompagnons chaque projet de l'idée au streaming.
+    </p>
+
+    <p class="hero-tagline">
+      Production &nbsp;·&nbsp; Management &nbsp;·&nbsp; Distribution &nbsp;·&nbsp; Technologie
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">
+        🎯 Réserver une consultation
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=237656422854" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        📲 WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-arrow"></div>
+    Découvrir
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-visual reveal">
+        <div class="about-img-wrap">
+          🎵
+        </div>
+        <div class="about-card">
+          <div class="about-card-number">6+</div>
+          <div class="about-card-label">Divisions actives</div>
+        </div>
+      </div>
+
+      <div class="about-text reveal reveal-delay-2">
+        <span class="section-label">Qui sommes-nous ?</span>
+        <h2 class="section-title" id="about-title">
+          Un groupe créatif <span class="gradient-text">100 % camerounais</span>
+        </h2>
+        <p style="color:rgba(255,255,255,0.6); margin-bottom:24px; font-size:1.05rem; line-height:1.85;">
+          WinConcept Industry est un groupe de services créatifs, technologiques et stratégiques basé au Cameroun.
+          Nous accompagnons les artistes, entrepreneurs, startups, PME et entreprises dans le développement
+          de leurs projets grâce à une offre complète et intégrée.
+        </p>
+        <p style="color:rgba(255,255,255,0.6); margin-bottom:36px; font-size:1rem; line-height:1.85;">
+          Notre équipe multidisciplinaire combine expertise musicale, ingénierie digitale, stratégie marketing
+          et cybersécurité pour offrir un accompagnement local et international de premier niveau.
+        </p>
+
+        <div class="about-locations">
+          <div class="location-item">
+            <div class="location-icon">🎙️</div>
+            <div>
+              <div class="location-city">Yaoundé</div>
+              <div class="location-addr">Studio d'enregistrement WinConcept Studios</div>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">🏢</div>
+            <div>
+              <div class="location-city">Douala</div>
+              <div class="location-addr">Bureau de consultation — Makepe Bloc L</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DIVISIONS ===================== -->
+<section class="divisions section" id="divisions" aria-labelledby="divisions-title">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <span class="section-label">Nos divisions</span>
+      <h2 class="section-title" id="divisions-title">
+        Tout ce dont vous avez besoin, <span class="gradient-text">au même endroit</span>
+      </h2>
+      <p class="section-subtitle">
+        Six pôles d'excellence pour couvrir l'ensemble de votre parcours créatif et numérique.
+      </p>
+    </div>
+
+    <!-- Tab buttons -->
+    <div class="division-tabs" role="tablist" aria-label="Divisions WinConcept">
+      <button class="tab-btn active" data-tab="tab-studios"   role="tab" aria-selected="true"  aria-controls="tab-studios">🎙️ Studios</button>
+      <button class="tab-btn"        data-tab="tab-distrib"   role="tab" aria-selected="false" aria-controls="tab-distrib">🌍 Distribution</button>
+      <button class="tab-btn"        data-tab="tab-management" role="tab" aria-selected="false" aria-controls="tab-management">🎤 Management</button>
+      <button class="tab-btn"        data-tab="tab-digital"   role="tab" aria-selected="false" aria-controls="tab-digital">💻 Digital</button>
+      <button class="tab-btn"        data-tab="tab-marketing" role="tab" aria-selected="false" aria-controls="tab-marketing">📣 Marketing</button>
+      <button class="tab-btn"        data-tab="tab-cyber"     role="tab" aria-selected="false" aria-controls="tab-cyber">🔐 Cyber</button>
+    </div>
+
+    <!-- STUDIOS -->
+    <div class="tab-panel active" id="tab-studios" role="tabpanel">
+      <div class="division-content">
+        <div class="division-info">
+          <h3>WinConcept <span class="gradient-text">Studios</span></h3>
+          <p>Studio professionnel à Yaoundé équipé des meilleurs outils de production musicale. De l'enregistrement au mastering, nous façonnons votre son avec excellence.</p>
+          <ul class="service-list">
+            <li class="service-item">Enregistrement professionnel</li>
+            <li class="service-item">Mixage</li>
+            <li class="service-item">Mastering</li>
+            <li class="service-item">Coaching vocal</li>
+            <li class="service-item">Beatmaking &amp; production</li>
+            <li class="service-item">Sessions live</li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="#contact" class="btn btn-primary">Réserver une session</a>
+          </div>
+        </div>
+        <div class="division-visual">
+          <div class="division-icon-big">🎚️</div>
+          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.15rem; margin-bottom:12px;">Équipements professionnels</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.55); line-height:1.8;">
+            Micros de référence, console de mixage haute gamme, acoustique traitée et plugins professionnels pour un rendu sonore irréprochable.
+          </p>
+          <div class="platform-grid" style="margin-top:24px;">
+            <div class="platform-chip">Pro Tools</div>
+            <div class="platform-chip">Logic Pro</div>
+            <div class="platform-chip">Ableton</div>
+            <div class="platform-chip">FL Studio</div>
+            <div class="platform-chip">Cubase</div>
+            <div class="platform-chip">+Plus</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISTRIBUTION -->
+    <div class="tab-panel" id="tab-distrib" role="tabpanel">
+      <div class="division-content">
+        <div class="division-info">
+          <h3>WinConcept <span class="gradient-text">Distribution</span></h3>
+          <p>Distribuez votre musique sur toutes les plateformes mondiales. Monétisez votre art et gérez vos droits avec transparence et efficacité.</p>
+          <ul class="service-list">
+            <li class="service-item">Publication sur toutes les plateformes</li>
+            <li class="service-item">Monétisation des streams</li>
+            <li class="service-item">Gestion des droits d'auteur</li>
+            <li class="service-item">Rapports de performance détaillés</li>
+            <li class="service-item">Collecte des redevances</li>
+            <li class="service-item">Pitching éditorial Spotify</li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="#contact" class="btn btn-primary">Distribuer ma musique</a>
+          </div>
+        </div>
+        <div class="division-visual">
+          <div class="division-icon-big">🌍</div>
+          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:20px;">Plateformes partenaires</h4>
+          <div class="platform-grid">
+            <div class="platform-chip">🟢 Spotify</div>
+            <div class="platform-chip">🍎 Apple Music</div>
+            <div class="platform-chip">🟣 Deezer</div>
+            <div class="platform-chip">🟠 Amazon Music</div>
+            <div class="platform-chip">🎵 TikTok</div>
+            <div class="platform-chip">🔴 YouTube</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANAGEMENT -->
+    <div class="tab-panel" id="tab-management" role="tabpanel">
+      <div class="division-content">
+        <div class="division-info">
+          <h3>WinConcept <span class="gradient-text">Management</span></h3>
+          <p>Développez votre carrière artistique avec un accompagnement stratégique personnalisé. Nous construisons votre image et vos opportunités.</p>
+          <ul class="service-list">
+            <li class="service-item">Développement artistique</li>
+            <li class="service-item">Gestion de carrière</li>
+            <li class="service-item">Image de marque artistique</li>
+            <li class="service-item">Relations médias &amp; presse</li>
+            <li class="service-item">Booking &amp; événements</li>
+            <li class="service-item">Accompagnement stratégique</li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="#contact" class="btn btn-primary">Être géré par WinConcept</a>
+          </div>
+        </div>
+        <div class="division-visual">
+          <div class="division-icon-big">🎤</div>
+          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:20px;">Artistes sous management</h4>
+          <div class="artist-cards">
+            <div class="artist-card">
+              <div class="artist-avatar">🎤</div>
+              <div>
+                <div class="artist-name">Diablit</div>
+                <div class="artist-role">Artiste – Afropop / Urban</div>
+              </div>
+            </div>
+            <div class="artist-card">
+              <div class="artist-avatar">🦁</div>
+              <div>
+                <div class="artist-name">Simba Draken</div>
+                <div class="artist-role">Artiste – Afrobeats / R&B</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIGITAL -->
+    <div class="tab-panel" id="tab-digital" role="tabpanel">
+      <div class="division-content">
+        <div class="division-info">
+          <h3>WinConcept <span class="gradient-text">Digital</span></h3>
+          <p>Création de votre présence digitale sur mesure. Sites vitrine, boutiques en ligne, applications web et hébergement — nous livrons des produits à la hauteur de vos ambitions.</p>
+          <ul class="service-list">
+            <li class="service-item">Création de sites web professionnels</li>
+            <li class="service-item">Landing pages optimisées</li>
+            <li class="service-item">Sites vitrines sur mesure</li>
+            <li class="service-item">Boutiques en ligne (E-commerce)</li>
+            <li class="service-item">Applications web</li>
+            <li class="service-item">Hébergement &amp; maintenance</li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="#contact" class="btn btn-primary">Créer mon site web</a>
+          </div>
+        </div>
+        <div class="division-visual">
+          <div class="division-icon-big">💻</div>
+          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:12px;">Technologies utilisées</h4>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:20px;">
+            Nous maîtrisons les technologies les plus modernes pour créer des expériences digitales rapides, sécurisées et évolutives.
+          </p>
+          <div class="platform-grid">
+            <div class="platform-chip">React</div>
+            <div class="platform-chip">Next.js</div>
+            <div class="platform-chip">WordPress</div>
+            <div class="platform-chip">Shopify</div>
+            <div class="platform-chip">Node.js</div>
+            <div class="platform-chip">+Plus</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKETING -->
+    <div class="tab-panel" id="tab-marketing" role="tabpanel">
+      <div class="division-content">
+        <div class="division-info">
+          <h3>WinConcept <span class="gradient-text">Marketing</span></h3>
+          <p>Amplifiez votre visibilité avec des campagnes publicitaires ciblées sur toutes les plateformes. Nous transformons vos investissements en résultats mesurables.</p>
+          <ul class="service-list">
+            <li class="service-item">Facebook &amp; Instagram Ads</li>
+            <li class="service-item">TikTok Ads</li>
+            <li class="service-item">Google Ads (Search &amp; Display)</li>
+            <li class="service-item">Promotion de chansons &amp; artistes</li>
+            <li class="service-item">Acquisition de clients B2B/B2C</li>
+            <li class="service-item">Gestion des réseaux sociaux</li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="#contact" class="btn btn-primary">Lancer une campagne</a>
+          </div>
+        </div>
+        <div class="division-visual">
+          <div class="division-icon-big">📣</div>
+          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:12px;">Plateformes publicitaires</h4>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:20px;">
+            Certifiés sur les principales plateformes, nous créons des campagnes qui convertissent.
+          </p>
+          <div class="platform-grid">
+            <div class="platform-chip">📘 Facebook</div>
+            <div class="platform-chip">📸 Instagram</div>
+            <div class="platform-chip">🎵 TikTok</div>
+            <div class="platform-chip">🔍 Google</div>
+            <div class="platform-chip">▶️ YouTube</div>
+            <div class="platform-chip">🐦 X/Twitter</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CYBER -->
+    <div class="tab-panel" id="tab-cyber" role="tabpanel">
+      <div class="division-content">
+        <div class="division-info">
+          <h3>WinConcept <span class="gradient-text">Cyber</span></h3>
+          <p>Protégez votre entreprise avec des solutions de cybersécurité adaptées à vos risques. De l'audit à la formation, nous sécurisons votre espace numérique.</p>
+          <ul class="service-list">
+            <li class="service-item">Évaluation des risques &amp; conformité</li>
+            <li class="service-item">Tests d'intrusion (Pentesting)</li>
+            <li class="service-item">Simulations d'attaques</li>
+            <li class="service-item">Surveillance &amp; détection</li>
+            <li class="service-item">Réponse aux incidents</li>
+            <li class="service-item">Formation &amp; sensibilisation</li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="#contact" class="btn btn-primary">Sécuriser mon entreprise</a>
+          </div>
+        </div>
+        <div class="division-visual">
+          <div class="cyber-grid">
+
+            <div class="cyber-card">
+              <div class="cyber-card-icon">🏛️</div>
+              <div class="cyber-card-title">Gouvernance & Risques</div>
+              <div class="cyber-card-desc">
+                Évaluation des risques, politiques de sécurité, conformité réglementaire.
+              </div>
+            </div>
+
+            <div class="cyber-card">
+              <div class="cyber-card-icon">⚔️</div>
+              <div class="cyber-card-title">Sécurité offensive</div>
+              <div class="cyber-card-desc">
+                Tests d'intrusion, simulations d'attaques, évaluation de vulnérabilités.
+              </div>
+            </div>
+
+            <div class="cyber-card">
+              <div class="cyber-card-icon">🛡️</div>
+              <div class="cyber-card-title">Sécurité défensive</div>
+              <div class="cyber-card-desc">
+                Surveillance 24/7, détection d'intrusions, réponse aux incidents.
+              </div>
+            </div>
+
+            <div class="cyber-card">
+              <div class="cyber-card-icon">🎓</div>
+              <div class="cyber-card-title">Sensibilisation</div>
+              <div class="cyber-card-desc">
+                Formations, simulations de phishing, ateliers collaborateurs.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="process section" id="process" aria-labelledby="process-title">
+  <div class="container">
+
+    <div class="section-header centered reveal">
+      <span class="section-label">Notre processus</span>
+      <h2 class="section-title" id="process-title">
+        Comment nous <span class="gradient-text">travaillons</span>
+      </h2>
+      <p class="section-subtitle" style="margin:0 auto;">
+        Un accompagnement structuré de la première consultation jusqu'à la croissance de votre projet.
+      </p>
+    </div>
+
+    <div class="process-track reveal reveal-delay-2">
+
+      <div class="process-step">
+        <div class="step-number"><div class="step-icon">💬</div></div>
+        <div class="step-title">Consultation</div>
+        <div class="step-desc">Échange pour comprendre vos objectifs et votre vision.</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number"><div class="step-icon">🔍</div></div>
+        <div class="step-title">Analyse</div>
+        <div class="step-desc">Audit de vos besoins, ressources et de votre marché.</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number"><div class="step-icon">📋</div></div>
+        <div class="step-title">Planification</div>
+        <div class="step-desc">Stratégie personnalisée avec planning et livrables clairs.</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number"><div class="step-icon">⚙️</div></div>
+        <div class="step-title">Production</div>
+        <div class="step-desc">Exécution par nos experts avec suivi en temps réel.</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number"><div class="step-icon">🚀</div></div>
+        <div class="step-title">Lancement</div>
+        <div class="step-desc">Déploiement, publication et activation des canaux.</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number"><div class="step-icon">📈</div></div>
+        <div class="step-title">Croissance</div>
+        <div class="step-desc">Suivi des performances et optimisations continues.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PORTFOLIO ===================== -->
+<section class="portfolio section" id="portfolio" aria-labelledby="portfolio-title">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <span class="section-label">Réalisations</span>
+      <h2 class="section-title" id="portfolio-title">
+        Nos <span class="gradient-text">projets</span>
+      </h2>
+      <p class="section-subtitle">
+        Un aperçu de ce que nous créons pour nos clients et artistes.
+      </p>
+    </div>
+
+    <div class="portfolio-filters reveal">
+      <button class="filter-btn active" data-filter="all">Tout voir</button>
+      <button class="filter-btn" data-filter="musique">Musique</button>
+      <button class="filter-btn" data-filter="video">Vidéo</button>
+      <button class="filter-btn" data-filter="marketing">Marketing</button>
+      <button class="filter-btn" data-filter="web">Sites web</button>
+      <button class="filter-btn" data-filter="cyber">Cybersécurité</button>
+    </div>
+
+    <div class="portfolio-grid reveal reveal-delay-2">
+
+      <div class="portfolio-item" data-cat="musique" style="background:linear-gradient(135deg,#1a0533,#0d1a33);">
+        <div class="portfolio-item-bg">🎵</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-cat">Musique</div>
+          <div class="portfolio-name">Production — Diablit «&nbsp;Nouveau Son&nbsp;»</div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="web" style="background:linear-gradient(135deg,#001a33,#001133);">
+        <div class="portfolio-item-bg">💻</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-cat">Site web</div>
+          <div class="portfolio-name">Plateforme e-commerce locale</div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="marketing" style="background:linear-gradient(135deg,#1a1500,#330a00);">
+        <div class="portfolio-item-bg">📣</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-cat">Marketing</div>
+          <div class="portfolio-name">Campagne Facebook Ads — Artiste</div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="video" style="background:linear-gradient(135deg,#1a0000,#0d1a00);">
+        <div class="portfolio-item-bg">🎬</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-cat">Vidéo</div>
+          <div class="portfolio-name">Clip officiel — Simba Draken</div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="cyber" style="background:linear-gradient(135deg,#001a1a,#0d0033);">
+        <div class="portfolio-item-bg">🔐</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-cat">Cybersécurité</div>
+          <div class="portfolio-name">Audit sécurité — PME Douala</div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-cat="musique" style="background:linear-gradient(135deg,#1a0a1a,#001a0d);">
+        <div class="portfolio-item-bg">🎧</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-cat">Distribution</div>
+          <div class="portfolio-name">Distribution — 15+ plateformes</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="stats" aria-label="Nos chiffres clés">
+  <div class="container">
+    <div class="stats-grid">
+
+      <div class="stat-item">
+        <div class="stat-number" data-target="50" data-suffix="+">0+</div>
+        <div class="stat-label">Artistes accompagnés</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number" data-target="120" data-suffix="+">0+</div>
+        <div class="stat-label">Projets réalisés</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number" data-target="80" data-suffix="+">0+</div>
+        <div class="stat-label">Campagnes publicitaires lancées</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number" data-target="98" data-suffix="%">0%</div>
+        <div class="stat-label">Clients satisfaits</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials section" id="testimonials" aria-labelledby="testimonials-title">
+  <div class="container">
+
+    <div class="section-header centered reveal">
+      <span class="section-label">Témoignages</span>
+      <h2 class="section-title" id="testimonials-title">
+        Ce que disent <span class="gradient-text">nos clients</span>
+      </h2>
+    </div>
+
+    <div class="testimonial-slider reveal reveal-delay-1">
+
+      <div class="testimonial-card">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testimonial-text">
+          "WinConcept a transformé mon son. Le mixage et le mastering étaient impeccables. Je recommande vivement à tout artiste camerounais qui veut un son international."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">🎤</div>
+          <div>
+            <div class="author-name">Diablit</div>
+            <div class="author-role">Artiste – WinConcept Management</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testimonial-text">
+          "Grâce à la campagne Facebook Ads de WinConcept, mes ventes ont triplé en deux mois. Une équipe professionnelle, réactive et créative."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">💼</div>
+          <div>
+            <div class="author-name">Marie-Claire N.</div>
+            <div class="author-role">Entrepreneuse – Douala</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testimonial-text">
+          "Mon site web est exactement ce que je voulais. Moderne, rapide et optimisé SEO. WinConcept Digital maîtrise vraiment la création web."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">🏪</div>
+          <div>
+            <div class="author-name">Patrick D.</div>
+            <div class="author-role">Directeur – Startup Yaoundé</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BLOG ===================== -->
+<section class="section" id="blog" style="background:var(--black);" aria-labelledby="blog-title">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <span class="section-label">Blog &amp; Actualités</span>
+      <h2 class="section-title" id="blog-title">
+        Ressources &amp; <span class="gradient-text">conseils</span>
+      </h2>
+      <p class="section-subtitle">
+        Tendances musicales, marketing digital, cybersécurité — notre expertise en texte.
+      </p>
+    </div>
+
+    <div class="blog-grid reveal reveal-delay-1">
+
+      <article class="blog-card">
+        <div class="blog-card-img">🎵</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Production musicale</div>
+          <h3 class="blog-title">Comment préparer sa session d'enregistrement comme un pro</h3>
+          <p class="blog-excerpt">Découvrez les étapes clés pour arriver en studio parfaitement prêt et maximiser votre temps de production.</p>
+          <div class="blog-meta">
+            <span>31 mai 2026</span>
+            <span>5 min de lecture</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-img">📣</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Marketing digital</div>
+          <h3 class="blog-title">TikTok Ads en 2026 : la stratégie pour les artistes camerounais</h3>
+          <p class="blog-excerpt">TikTok est devenu incontournable. Voici comment créer des campagnes qui propulsent votre musique.</p>
+          <div class="blog-meta">
+            <span>28 mai 2026</span>
+            <span>7 min de lecture</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card-img">🔐</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Cybersécurité</div>
+          <h3 class="blog-title">Les 5 menaces cyber les plus courantes pour les PME en Afrique</h3>
+          <p class="blog-excerpt">Phishing, ransomware, ingénierie sociale — comprendre les risques pour mieux se protéger.</p>
+          <div class="blog-meta">
+            <span>24 mai 2026</span>
+            <span>6 min de lecture</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin-top:48px;">
+      <a href="#contact" class="btn btn-outline">Voir tous les articles</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq section" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+
+    <div class="section-header centered reveal">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title" id="faq-title">
+        Questions <span class="gradient-text">fréquentes</span>
+      </h2>
+    </div>
+
+    <ul class="faq-list reveal reveal-delay-1" role="list">
+
+      <li class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Combien coûtent vos services ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Chaque projet est unique. Les prix varient selon vos objectifs, l'ampleur du projet et les services requis. Contactez-nous afin d'obtenir une soumission personnalisée gratuite.
+          </div>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Travaillez-vous uniquement au Cameroun ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Non. Bien que nous soyons basés à Yaoundé et Douala, nous accompagnons des clients locaux et internationaux. Nos services digitaux, de distribution et de marketing sont disponibles partout dans le monde.
+          </div>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Quel délai pour la création d'un site web ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Le délai varie selon la complexité du projet : une landing page peut être livrée en 5 à 7 jours, un site vitrine en 2 à 3 semaines, et une boutique en ligne ou application web en 4 à 8 semaines.
+          </div>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Comment fonctionne la distribution musicale ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Nous prenons en charge tout le processus : préparation des fichiers master, soumission sur toutes les plateformes (Spotify, Apple Music, Deezer, etc.), gestion des métadonnées, et suivi des statistiques. Vous conservez 100% de vos droits.
+          </div>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Proposez-vous des services de cybersécurité pour particuliers ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Nos services de cybersécurité s'adressent principalement aux entreprises, PME, startups et organisations. Nous proposons aussi des formations et sensibilisations pour les équipes et les particuliers.
+          </div>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Comment réserver une session en studio ?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Contactez-nous via le formulaire ci-dessous, par email ou directement sur WhatsApp. Nous confirmons votre créneau sous 24h et vous envoyons toutes les informations pratiques pour votre session.
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact section" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title" id="contact-title">
+        Parlons de votre <span class="gradient-text">projet</span>
+      </h2>
+      <p class="section-subtitle">
+        Remplissez le formulaire ou contactez-nous directement. Réponse garantie sous 24h.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="contact-info reveal">
+
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:winconceptindutrystudios@gmail.com" style="color:var(--white);">
+                winconceptindutrystudios@gmail.com
+              </a>
+            </div>
+            <div class="contact-sub">Réponse sous 24h</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📲</div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">
+              <a href="https://api.whatsapp.com/send?phone=237656422854" target="_blank" rel="noopener" style="color:var(--white);">
+                +237 656 422 854
+              </a>
+            </div>
+            <div class="contact-sub">Disponible 7j/7</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Studio – Yaoundé</div>
+            <div class="contact-value">WinConcept Studios</div>
+            <div class="contact-sub">Studio d'enregistrement professionnel</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🏢</div>
+          <div>
+            <div class="contact-label">Bureau – Douala</div>
+            <div class="contact-value">Makepe Bloc L</div>
+            <div class="contact-sub">Bureau de consultation</div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <div class="contact-label" style="margin-bottom:16px;">Réseaux sociaux</div>
+          <div class="contact-socials">
+            <a class="social-btn" href="#" aria-label="Facebook" target="_blank" rel="noopener">📘</a>
+            <a class="social-btn" href="#" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
+            <a class="social-btn" href="#" aria-label="TikTok" target="_blank" rel="noopener">🎵</a>
+            <a class="social-btn" href="#" aria-label="YouTube" target="_blank" rel="noopener">▶️</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form reveal reveal-delay-2">
+        <form novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Prénom</label>
+              <input type="text" id="fname" name="firstname" placeholder="Jean" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Nom</label>
+              <input type="text" id="lname" name="lastname" placeholder="Dupont" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jean@exemple.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">WhatsApp / Téléphone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+237 6XX XXX XXX" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service souhaité</label>
+            <select id="service" name="service">
+              <option value="" disabled selected>Choisir un service</option>
+              <option>Studio d'enregistrement</option>
+              <option>Mixage &amp; mastering</option>
+              <option>Distribution musicale</option>
+              <option>Management artistique</option>
+              <option>Création de site web</option>
+              <option>Marketing digital / Publicité</option>
+              <option>Cybersécurité</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Décrivez votre projet..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">
+            🚀 Envoyer le message
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="Winconcept Studios logo.png" alt="WinConcept Industry" onerror="this.style.display='none'" />
+          <div class="footer-logo-name">
+            WINCONCEPT
+            <span>INDUSTRY</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Nous accompagnons chaque projet de l'idée au streaming. Production, Management, Distribution, Technologie et Cybersécurité — au même endroit.
+        </p>
+        <div class="contact-socials">
+          <a class="social-btn" href="#" aria-label="Facebook">📘</a>
+          <a class="social-btn" href="#" aria-label="Instagram">📸</a>
+          <a class="social-btn" href="#" aria-label="TikTok">🎵</a>
+          <a class="social-btn" href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Divisions</div>
+        <ul class="footer-links">
+          <li><a href="#divisions">WinConcept Studios</a></li>
+          <li><a href="#divisions">Distribution</a></li>
+          <li><a href="#divisions">Management</a></li>
+          <li><a href="#divisions">Digital</a></li>
+          <li><a href="#divisions">Marketing</a></li>
+          <li><a href="#divisions">Cyber</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#divisions">Enregistrement</a></li>
+          <li><a href="#divisions">Mixage &amp; mastering</a></li>
+          <li><a href="#divisions">Sites web</a></li>
+          <li><a href="#divisions">Facebook Ads</a></li>
+          <li><a href="#divisions">Pentesting</a></li>
+          <li><a href="#divisions">Formation cyber</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Liens utiles</div>
+        <ul class="footer-links">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#process">Processus</a></li>
+          <li><a href="#portfolio">Réalisations</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 <a href="#">WinConcept Industry</a>. Tous droits réservés. Conçu au Cameroun 🇨🇲
+      </div>
+      <nav class="footer-legal" aria-label="Liens légaux">
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Conditions d'utilisation</a>
+        <a href="#">Mentions légales</a>
+      </nav>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===================== WhatsApp float ===================== -->
+<a class="wa-float" href="https://api.whatsapp.com/send?phone=237656422854" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <span class="wa-float-pulse"></span>
+  📲
+</a>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+</body>
+</html>
