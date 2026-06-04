@@ -790,6 +790,7 @@ h1, h2, h3, h4, h5 {
   background: var(--dark);
   cursor: pointer;
   transition: var(--transition);
+  display: block;
 }
 
 .portfolio-item:first-child { grid-column: span 2; }
