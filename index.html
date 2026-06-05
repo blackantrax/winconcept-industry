@@ -82,6 +82,31 @@
       .kadji-feature{grid-template-columns:1fr; gap:24px; padding:24px;}
       .nkumu-banner{padding:32px 24px;}
     }
+
+    /* ===== FONDATEUR ===== */
+    .founder-section { background:linear-gradient(180deg,var(--black) 0%,#020b14 100%); }
+    .founder-inner { display:grid; grid-template-columns:420px 1fr; gap:64px; align-items:center; }
+    .founder-photo-wrap { position:relative; }
+    .founder-photo-frame { position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5;
+      background:linear-gradient(135deg,rgba(0,183,243,0.15),rgba(0,0,0,0.8));
+      border:1px solid rgba(0,183,243,0.2); box-shadow:0 40px 100px rgba(0,0,0,0.7); }
+    .founder-photo-frame img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .founder-photo-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; color:rgba(255,255,255,0.3); font-size:5rem; }
+    .founder-badge-float { position:absolute; bottom:-16px; left:50%; transform:translateX(-50%);
+      background:var(--primary); color:var(--black); font-family:'Montserrat',sans-serif;
+      font-weight:900; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+      padding:10px 24px; border-radius:50px; white-space:nowrap; box-shadow:0 8px 32px rgba(0,183,243,0.45); }
+    .founder-content { padding-bottom:32px; }
+    .founder-eyebrow { font-size:.72rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--primary); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+    .founder-eyebrow::before { content:''; width:32px; height:2px; background:var(--primary); }
+    .founder-name { font-family:'Montserrat',sans-serif; font-size:clamp(2.5rem,5vw,4rem); font-weight:900; line-height:1; margin-bottom:10px; }
+    .founder-title { font-size:1rem; color:rgba(255,255,255,0.5); margin-bottom:24px; font-style:italic; }
+    .founder-quote { font-family:'Montserrat',sans-serif; font-size:clamp(1.1rem,2vw,1.45rem); font-weight:700; line-height:1.5; color:#fff; margin-bottom:28px; border-left:3px solid var(--primary); padding-left:20px; }
+    .founder-roles { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:32px; }
+    .founder-role { background:rgba(0,183,243,0.08); border:1px solid rgba(0,183,243,0.2); border-radius:6px; padding:6px 14px; font-size:.78rem; font-weight:700; color:var(--primary); }
+    .founder-bday { display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:14px 20px; font-size:.88rem; color:rgba(255,255,255,0.6); }
+    .founder-bday-icon { font-size:1.6rem; flex-shrink:0; }
+    @media(max-width:960px){ .founder-inner{grid-template-columns:1fr; gap:48px;} .founder-photo-wrap{max-width:360px; margin:0 auto;} }
   </style>
 </head>
 <body>
@@ -100,11 +125,10 @@
 
     <ul class="nav-links" role="list">
       <li><a href="#about">À propos</a></li>
+      <li><a href="#fondateur">Fondateur</a></li>
       <li><a href="#artistes">Artistes</a></li>
       <li><a href="#divisions">Divisions</a></li>
-      <li><a href="#process">Processus</a></li>
       <li><a href="#portfolio">Réalisations</a></li>
-      <li><a href="#blog">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
@@ -222,6 +246,62 @@
               <div class="location-city">Douala</div>
               <div class="location-addr">Bureau de consultation — Makepe Bloc L</div>
             </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FONDATEUR ===================== -->
+<section class="founder-section section" id="fondateur" aria-labelledby="fondateur-title">
+  <div class="container">
+    <div class="founder-inner">
+
+      <!-- Photo -->
+      <div class="founder-photo-wrap reveal">
+        <div class="founder-photo-frame">
+          <img src="assets/images/founder/krh-portrait.jpg"
+               alt="KRH — Fondateur de WinConcept Industry"
+               onerror="this.parentNode.innerHTML='<div class=\'founder-photo-placeholder\'><span>👑</span><span style=\'font-size:1rem;font-family:Montserrat,sans-serif;font-weight:700;\'>KRH</span></div>'" />
+        </div>
+        <div class="founder-badge-float">Le Fondateur</div>
+      </div>
+
+      <!-- Contenu -->
+      <div class="founder-content reveal reveal-delay-1">
+        <div class="founder-eyebrow">WinConcept Industry</div>
+        <h2 class="founder-name" id="fondateur-title">
+          KRH<br/><span class="gradient-text">Le Manager</span>
+        </h2>
+        <p class="founder-title">Fondateur &amp; Directeur Général · WinConcept Industry</p>
+
+        <blockquote class="founder-quote">
+          "La musique est ma passion,<br/>l'excellence est ma mission."
+        </blockquote>
+
+        <div class="founder-roles">
+          <span class="founder-role">Manager</span>
+          <span class="founder-role">Producteur</span>
+          <span class="founder-role">Ingénieur Son</span>
+          <span class="founder-role">Auteur</span>
+          <span class="founder-role">Compositeur</span>
+          <span class="founder-role">Visionnaire</span>
+        </div>
+
+        <p style="color:rgba(255,255,255,0.6); font-size:.95rem; line-height:1.85; margin-bottom:28px;">
+          À la tête de WinConcept Industry, KRH incarne une vision : faire rayonner la musique
+          camerounaise au monde entier. Avec plus d'une décennie d'expérience dans l'industrie créative,
+          il a bâti un groupe intégré qui accompagne artistes et entrepreneurs à chaque étape de leur
+          croissance — de la première note au streaming international.
+        </p>
+
+        <div class="founder-bday">
+          <div class="founder-bday-icon">🎂</div>
+          <div>
+            <strong style="color:#fff;">28 Mai — Happy Birthday, Big M</strong><br/>
+            <span>Chaque projet est une histoire. Chaque collaboration, une victoire. Chaque jour, une nouvelle création.</span>
           </div>
         </div>
       </div>
@@ -506,14 +586,16 @@
       <div class="division-content">
         <div class="division-info">
           <h3>WinConcept <span class="gradient-text">Digital</span></h3>
-          <p>Création de votre présence digitale sur mesure. Sites vitrine, boutiques en ligne, applications web et hébergement — nous livrons des produits à la hauteur de vos ambitions.</p>
+          <p>Conception, réalisation et maintenance de sites dynamiques, bilingues et e-commerce. Hébergement, noms de domaine, adresses email professionnelles — nous gérons votre présence en ligne de A à Z.</p>
           <ul class="service-list">
-            <li class="service-item">Création de sites web professionnels</li>
-            <li class="service-item">Landing pages optimisées</li>
-            <li class="service-item">Sites vitrines sur mesure</li>
-            <li class="service-item">Boutiques en ligne (E-commerce)</li>
-            <li class="service-item">Applications web</li>
-            <li class="service-item">Hébergement &amp; maintenance</li>
+            <li class="service-item">Sites web dynamiques, bilingues &amp; e-commerce</li>
+            <li class="service-item">Landing pages &amp; sites vitrines sur mesure</li>
+            <li class="service-item">Hébergement &amp; gestion de noms de domaine</li>
+            <li class="service-item">Adresses email professionnelles</li>
+            <li class="service-item">Applications web &amp; mobiles</li>
+            <li class="service-item">Montage vidéo &amp; design infographie</li>
+            <li class="service-item">Webmarketing &amp; animation d'audience</li>
+            <li class="service-item">Data analytics &amp; mesure d'audience</li>
           </ul>
           <div style="margin-top:32px;">
             <a href="#contact" class="btn btn-primary">Créer mon site web</a>
@@ -521,17 +603,17 @@
         </div>
         <div class="division-visual">
           <div class="division-icon-big">💻</div>
-          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:12px;">Technologies utilisées</h4>
+          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:12px;">Technologies &amp; Outils</h4>
           <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:20px;">
-            Nous maîtrisons les technologies les plus modernes pour créer des expériences digitales rapides, sécurisées et évolutives.
+            Google Ads, Analytics, Emailing, SEO — des outils éprouvés pour des résultats concrets et mesurables.
           </p>
           <div class="platform-grid">
-            <div class="platform-chip">React</div>
-            <div class="platform-chip">Next.js</div>
+            <div class="platform-chip">React / Next.js</div>
             <div class="platform-chip">WordPress</div>
             <div class="platform-chip">Shopify</div>
+            <div class="platform-chip">Google Ads</div>
+            <div class="platform-chip">Analytics</div>
             <div class="platform-chip">Node.js</div>
-            <div class="platform-chip">+Plus</div>
           </div>
         </div>
       </div>
@@ -542,14 +624,16 @@
       <div class="division-content">
         <div class="division-info">
           <h3>WinConcept <span class="gradient-text">Marketing</span></h3>
-          <p>Amplifiez votre visibilité avec des campagnes publicitaires ciblées sur toutes les plateformes. Nous transformons vos investissements en résultats mesurables.</p>
+          <p>Marketing stratégique, veille concurrentielle, brand content et campagnes multi-canal. Nous positionnons votre marque de manière gagnante grâce à une méthodologie socio-pratique axée sur la valeur ajoutée.</p>
           <ul class="service-list">
-            <li class="service-item">Facebook &amp; Instagram Ads</li>
-            <li class="service-item">TikTok Ads</li>
-            <li class="service-item">Google Ads (Search &amp; Display)</li>
-            <li class="service-item">Promotion de chansons &amp; artistes</li>
-            <li class="service-item">Acquisition de clients B2B/B2C</li>
-            <li class="service-item">Gestion des réseaux sociaux</li>
+            <li class="service-item">Marketing stratégique &amp; veille concurrentielle</li>
+            <li class="service-item">Brand content &amp; identité graphique</li>
+            <li class="service-item">Facebook, Instagram &amp; TikTok Ads</li>
+            <li class="service-item">Google Ads (Search, Display &amp; YouTube)</li>
+            <li class="service-item">Gestion &amp; animation des réseaux sociaux</li>
+            <li class="service-item">Promotion d'artistes &amp; de chansons</li>
+            <li class="service-item">Emailing &amp; campagnes de relance</li>
+            <li class="service-item">Affichage grand format &amp; flyers</li>
           </ul>
           <div style="margin-top:32px;">
             <a href="#contact" class="btn btn-primary">Lancer une campagne</a>
@@ -557,9 +641,9 @@
         </div>
         <div class="division-visual">
           <div class="division-icon-big">📣</div>
-          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:12px;">Plateformes publicitaires</h4>
+          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:12px;">Notre philosophie</h4>
           <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:20px;">
-            Certifiés sur les principales plateformes, nous créons des campagnes qui convertissent.
+            Nous n'utilisons pas la communication comme un outil de diffusion — mais comme un outil d'échange, de pouvoir et de persuasion pour maximiser votre impact.
           </p>
           <div class="platform-grid">
             <div class="platform-chip">📘 Facebook</div>
@@ -567,7 +651,7 @@
             <div class="platform-chip">🎵 TikTok</div>
             <div class="platform-chip">🔍 Google</div>
             <div class="platform-chip">▶️ YouTube</div>
-            <div class="platform-chip">🐦 X/Twitter</div>
+            <div class="platform-chip">✉️ Emailing</div>
           </div>
         </div>
       </div>
