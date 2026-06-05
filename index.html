@@ -50,34 +50,38 @@
     .ah-body { position:absolute; bottom:0; left:0; right:0; padding:28px; }
     .ah-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(0,183,243,0.15); border:1px solid rgba(0,183,243,0.4); border-radius:50px; padding:4px 14px; font-size:.62rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--primary); margin-bottom:12px; }
     .ah-name { font-family:'Montserrat',sans-serif; font-size:clamp(2rem,4vw,2.8rem); font-weight:900; line-height:1; margin-bottom:6px; color:#fff; }
-    .ah-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }
+    .ah-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
     .ah-tag { background:rgba(255,255,255,0.1); border-radius:4px; padding:3px 10px; font-size:.68rem; font-weight:600; color:rgba(255,255,255,0.65); }
-    .ah-player { background:rgba(0,0,0,0.65); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:12px 14px; display:flex; align-items:center; gap:12px; margin-bottom:16px; }
-    .ah-player-cover { width:42px; height:42px; border-radius:7px; object-fit:cover; flex-shrink:0; }
-    .ah-player-info { flex:1; min-width:0; }
-    .ah-player-title { font-weight:700; font-size:.85rem; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .ah-player-sub { font-size:.68rem; color:rgba(255,255,255,0.4); margin-top:2px; }
-    .ah-play-btn { width:38px; height:38px; border-radius:50%; background:var(--primary); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:var(--transition); color:var(--black); }
-    .ah-play-btn:hover, .ah-play-btn.playing { transform:scale(1.1); box-shadow:0 0 20px rgba(0,183,243,0.5); }
+    .ah-bio { font-size:.85rem; color:rgba(255,255,255,0.6); line-height:1.6; margin-bottom:18px; }
     .ah-ctas { display:flex; gap:10px; }
-    .btn-ah-main { flex:1; background:var(--primary); color:var(--black); font-weight:700; font-size:.8rem; padding:10px 14px; border-radius:50px; text-align:center; transition:var(--transition); text-decoration:none; display:block; }
-    .btn-ah-main:hover { background:var(--secondary); color:#fff; }
-    .btn-ah-yt { flex:1; background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.75); font-weight:600; font-size:.8rem; padding:10px 14px; border-radius:50px; text-align:center; transition:var(--transition); border:1px solid rgba(255,255,255,0.12); text-decoration:none; display:block; }
+    .btn-ah-main { flex:1; background:var(--primary); color:var(--black); font-weight:700; font-size:.82rem; padding:11px 14px; border-radius:50px; text-align:center; transition:var(--transition); text-decoration:none; display:block; }
+    .btn-ah-main:hover { background:var(--secondary); color:#fff; transform:translateY(-2px); }
+    .btn-ah-yt { flex:1; background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.75); font-weight:600; font-size:.82rem; padding:11px 14px; border-radius:50px; text-align:center; transition:var(--transition); border:1px solid rgba(255,255,255,0.12); text-decoration:none; display:block; }
     .btn-ah-yt:hover { background:rgba(255,40,40,0.2); border-color:rgba(255,40,40,0.4); color:#ff5555; }
 
-    /* Productions grid */
-    .productions-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }
-    .prod-row { display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:14px 16px; cursor:pointer; transition:var(--transition); }
-    .prod-row:hover, .prod-row.wc-playing { background:rgba(0,183,243,0.08); border-color:rgba(0,183,243,0.3); }
-    .prod-row img { width:48px; height:48px; border-radius:8px; object-fit:cover; flex-shrink:0; background:var(--dark); }
-    .prod-info { flex:1; min-width:0; }
-    .prod-title { font-weight:700; font-size:.9rem; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .prod-art { font-size:.7rem; color:var(--primary); margin-top:3px; font-weight:600; }
-    .prod-meta { font-size:.65rem; color:rgba(255,255,255,0.35); margin-top:2px; }
-    .prod-play-btn { width:34px; height:34px; border-radius:50%; background:rgba(0,183,243,0.15); border:1px solid rgba(0,183,243,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:var(--transition); color:var(--primary); }
-    .prod-row.wc-playing .prod-play-btn, .prod-row:hover .prod-play-btn { background:var(--primary); color:var(--black); border-color:var(--primary); }
+    /* Kadji feature */
+    .kadji-feature { display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center; margin-bottom:80px; background:linear-gradient(135deg,rgba(0,183,243,0.06),rgba(0,0,0,0.3)); border:1px solid rgba(0,183,243,0.15); border-radius:24px; padding:36px; }
+    .kadji-video { position:relative; aspect-ratio:16/9; border-radius:16px; overflow:hidden; background:#000; box-shadow:0 24px 60px rgba(0,0,0,0.5); }
+    .kadji-video iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
+    .kadji-tag { display:inline-block; font-size:.72rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--primary); margin-bottom:16px; }
+    .kadji-title { font-family:'Montserrat',sans-serif; font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:900; line-height:1; margin-bottom:18px; }
+    .kadji-desc { font-size:.95rem; color:rgba(255,255,255,0.6); line-height:1.8; margin-bottom:26px; }
 
-    @media(max-width:860px){ .artists-duo{grid-template-columns:1fr;} }
+    /* NKUMU banner */
+    .nkumu-banner { position:relative; overflow:hidden; border-radius:24px; background:linear-gradient(135deg,#001a2e,#000); border:1px solid rgba(0,183,243,0.25); padding:48px; }
+    .nkumu-banner-glow { position:absolute; top:-50%; right:-10%; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle,rgba(0,183,243,0.25),transparent 70%); filter:blur(40px); pointer-events:none; }
+    .nkumu-banner-content { position:relative; z-index:1; display:flex; align-items:center; gap:28px; flex-wrap:wrap; }
+    .nkumu-banner-icon { font-size:3.5rem; flex-shrink:0; }
+    .nkumu-banner-text { flex:1; min-width:260px; }
+    .nkumu-banner-text h3 { font-family:'Montserrat',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:900; margin-bottom:10px; }
+    .nkumu-banner-text p { font-size:.95rem; color:rgba(255,255,255,0.6); line-height:1.7; }
+    .nkumu-banner-cta { flex-shrink:0; }
+
+    @media(max-width:860px){
+      .artists-duo{grid-template-columns:1fr;}
+      .kadji-feature{grid-template-columns:1fr; gap:24px; padding:24px;}
+      .nkumu-banner{padding:32px 24px;}
+    }
   </style>
 </head>
 <body>
@@ -236,7 +240,8 @@
         La musique qui nous <span class="gradient-text">propulse</span>
       </h2>
       <p class="section-subtitle">
-        Produits, managés et distribués par WinConcept Industry — Diablit et Simba Draken portent notre nom dans chacun de leurs sons.
+        Produits et managés par WinConcept Industry. Découvrez-les ici —
+        puis écoutez tous leurs sons en streaming sur <strong style="color:var(--primary);">NKUMU</strong>.
       </p>
     </div>
 
@@ -260,22 +265,10 @@
             <span class="ah-tag">Afrorap</span>
             <span class="ah-tag">Cameroun</span>
           </div>
-          <!-- Mini player -->
-          <div class="ah-player" id="player-diablit">
-            <img class="ah-player-cover" src="assets/images/diablit/cover-tout-moi.jpg" alt="TOUT MOI"
-                 onerror="this.style.background='rgba(0,183,243,0.2)'" />
-            <div class="ah-player-info">
-              <div class="ah-player-title">TOUT MOI</div>
-              <div class="ah-player-sub">Diablit · 2026 · WinConcept</div>
-            </div>
-            <button class="ah-play-btn" onclick="wcPlay('diablit','assets/audio/diablit-tout-moi.mp3','player-diablit')" aria-label="Écouter TOUT MOI">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-            </button>
-          </div>
-          <audio id="audio-diablit" preload="none"></audio>
+          <p class="ah-bio">L'authenticité brute du Noun à la scène nationale. Drill, trap et textes sans filtre.</p>
           <div class="ah-ctas">
-            <a href="https://diablit-music.vercel.app" target="_blank" rel="noopener" class="btn-ah-main">Site officiel →</a>
-            <a href="https://www.youtube.com/@Diablit237" target="_blank" rel="noopener" class="btn-ah-yt">▶ YouTube</a>
+            <a href="https://nkumu-music.vercel.app" target="_blank" rel="noopener" class="btn-ah-main">▶ Stream sur NKUMU</a>
+            <a href="https://www.youtube.com/@Diablit237" target="_blank" rel="noopener" class="btn-ah-yt">YouTube</a>
           </div>
         </div>
       </div>
@@ -297,118 +290,53 @@
             <span class="ah-tag">Afrorap</span>
             <span class="ah-tag">Cameroun</span>
           </div>
-          <!-- Mini player -->
-          <div class="ah-player" id="player-simba">
-            <img class="ah-player-cover" src="assets/images/simba/simba-front.jpg" alt="Magnetic"
-                 onerror="this.style.background='rgba(0,183,243,0.2)'" />
-            <div class="ah-player-info">
-              <div class="ah-player-title">MAGNETIC</div>
-              <div class="ah-player-sub">Simba Draken · 2024 · WinConcept</div>
-            </div>
-            <button class="ah-play-btn" onclick="wcPlay('simba','assets/audio/simba-magnetic.mp3','player-simba')" aria-label="Écouter Magnetic">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-            </button>
-          </div>
-          <audio id="audio-simba" preload="none"></audio>
+          <p class="ah-bio">Rise &amp; Shine. Hip-hop et pop urbaine — l'artiste derrière le phénomène «&nbsp;Kadji&nbsp;».</p>
           <div class="ah-ctas">
-            <a href="https://simba-draken-music.vercel.app" target="_blank" rel="noopener" class="btn-ah-main">Site officiel →</a>
-            <a href="https://www.youtube.com/@SIMBADRAKEN" target="_blank" rel="noopener" class="btn-ah-yt">▶ YouTube</a>
+            <a href="https://nkumu-music.vercel.app" target="_blank" rel="noopener" class="btn-ah-main">▶ Stream sur NKUMU</a>
+            <a href="https://www.youtube.com/@SIMBADRAKEN" target="_blank" rel="noopener" class="btn-ah-yt">YouTube</a>
           </div>
         </div>
       </div>
 
     </div>
 
-    <!-- Productions WinConcept — tracks à écouter -->
-    <div class="section-header reveal" style="margin-bottom:40px;">
-      <span class="section-label">Écoute</span>
-      <h3 class="section-title" style="font-size:clamp(1.5rem,3vw,2.2rem);">
-        Productions <span class="gradient-text">WinConcept</span>
-      </h3>
-      <p class="section-subtitle">
-        Clique pour écouter — nos artistes citent WinConcept dans leurs sons.
-        C'est leur musique qui parle pour nous.
-      </p>
+    <!-- KADJI — son phare de Simba Draken -->
+    <div class="kadji-feature reveal reveal-delay-2">
+      <div class="kadji-video">
+        <iframe src="https://www.youtube.com/embed/RvPglHksDvs?rel=0&modestbranding=1"
+                title="Kadji Champagne du Pays — Simba Draken"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="kadji-info">
+        <span class="kadji-tag">🔥 Le son qui marque le Cameroun</span>
+        <h3 class="kadji-title">KADJI<br/><span class="gradient-text">Champagne du Pays</span></h3>
+        <p class="kadji-desc">
+          Simba Draken signe l'un des sons les plus marquants de la scène camerounaise.
+          Une marque, un hymne — la preuve de ce que WinConcept Industry sait produire.
+        </p>
+        <div class="ah-ctas" style="max-width:420px;">
+          <a href="https://www.youtube.com/watch?v=RvPglHksDvs" target="_blank" rel="noopener" class="btn-ah-yt" style="flex:0 0 auto;padding:12px 22px;">▶ Voir sur YouTube</a>
+          <a href="https://nkumu-music.vercel.app" target="_blank" rel="noopener" class="btn-ah-main" style="flex:0 0 auto;padding:12px 22px;">Stream sur NKUMU →</a>
+        </div>
+      </div>
     </div>
 
-    <div class="productions-grid reveal reveal-delay-2" id="wc-productions">
-
-      <div class="prod-row" onclick="wcPlayProd(this,'assets/audio/diablit-tout-moi.mp3')">
-        <img src="assets/images/diablit/cover-tout-moi.jpg" alt="TOUT MOI" onerror="this.style.background='#1a1a2e'" />
-        <div class="prod-info">
-          <div class="prod-title">TOUT MOI</div>
-          <div class="prod-art">Diablit</div>
-          <div class="prod-meta">2026 · Drill · WinConcept</div>
+    <!-- Bannière NKUMU -->
+    <div class="nkumu-banner reveal reveal-delay-3">
+      <div class="nkumu-banner-glow"></div>
+      <div class="nkumu-banner-content">
+        <div class="nkumu-banner-icon">🎧</div>
+        <div class="nkumu-banner-text">
+          <h3>Tous nos sons sur <span class="gradient-text">NKUMU</span></h3>
+          <p>Notre plateforme de streaming — comme Spotify, mais 100&nbsp;% camerounaise.
+             Écoutez, suivez vos artistes et soutenez la scène locale. Inscrivez-vous gratuitement.</p>
         </div>
-        <div class="prod-play-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-        </div>
+        <a href="https://nkumu-music.vercel.app" target="_blank" rel="noopener" class="btn btn-primary nkumu-banner-cta">
+          Découvrir NKUMU →
+        </a>
       </div>
-
-      <div class="prod-row" onclick="wcPlayProd(this,'assets/audio/diablit-djoh.mp3')">
-        <img src="assets/images/diablit/diablit-artist.jpg" alt="DJOH" onerror="this.style.background='#1a1a2e'" />
-        <div class="prod-info">
-          <div class="prod-title">DJOH</div>
-          <div class="prod-art">Diablit</div>
-          <div class="prod-meta">2025 · Drill · Street</div>
-        </div>
-        <div class="prod-play-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-        </div>
-      </div>
-
-      <div class="prod-row" onclick="wcPlayProd(this,'assets/audio/simba-magnetic.mp3')">
-        <img src="assets/images/simba/simba-picture.jpg" alt="Magnetic" onerror="this.style.background='#1a1a2e'" />
-        <div class="prod-info">
-          <div class="prod-title">MAGNETIC</div>
-          <div class="prod-art">Simba Draken</div>
-          <div class="prod-meta">2024 · Pop Urbaine · WinConcept</div>
-        </div>
-        <div class="prod-play-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-        </div>
-      </div>
-
-      <div class="prod-row" onclick="wcPlayProd(this,'assets/audio/simba-briller.mp3')">
-        <img src="assets/images/simba/simba-front.jpg" alt="Briller" onerror="this.style.background='#1a1a2e'" />
-        <div class="prod-info">
-          <div class="prod-title">BRILLER</div>
-          <div class="prod-art">Simba Draken</div>
-          <div class="prod-meta">2024 · Hip-Hop · WinConcept</div>
-        </div>
-        <div class="prod-play-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-        </div>
-      </div>
-
-      <div class="prod-row" onclick="wcPlayProd(this,'assets/audio/simba-karisme.mp3')">
-        <img src="assets/images/simba/simba-all.jpg" alt="Karisme" onerror="this.style.background='#1a1a2e'" />
-        <div class="prod-info">
-          <div class="prod-title">KARISME</div>
-          <div class="prod-art">Simba Draken</div>
-          <div class="prod-meta">2024 · Hip-Hop · WinConcept</div>
-        </div>
-        <div class="prod-play-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
-        </div>
-      </div>
-
-      <!-- YE WANDA REMIX — lien YouTube direct -->
-      <div class="prod-row" onclick="window.open('https://www.youtube.com/watch?v=09cQfJv8MOw','_blank')">
-        <img src="assets/images/diablit/ye-wanda-cover.jpg" alt="YE WANDA REMIX" onerror="this.style.background='#1a1a2e'" />
-        <div class="prod-info">
-          <div class="prod-title">YE WANDA REMIX</div>
-          <div class="prod-art">LiFkA ft. Diablit & more</div>
-          <div class="prod-meta">2026 · Rap · Viral ▶ YouTube</div>
-        </div>
-        <div class="prod-play-btn">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 6.186a2.506 2.506 0 0 0-1.765-1.773C18.265 4 12 4 12 4s-6.265 0-7.817.413A2.506 2.506 0 0 0 2.418 6.186C2 7.743 2 12 2 12s0 4.257.418 5.814a2.506 2.506 0 0 0 1.765 1.773C5.735 20 12 20 12 20s6.265 0 7.817-.413a2.506 2.506 0 0 0 1.765-1.773C22 16.257 22 12 22 12s0-4.257-.418-5.814zM10 15.464V8.536L16 12l-6 3.464z"/></svg>
-        </div>
-      </div>
-
     </div>
-    <!-- Audio global pour les productions -->
-    <audio id="wc-global-audio" preload="none"></audio>
 
   </div>
 </section>
@@ -1331,85 +1259,6 @@
 
 <!-- Scripts -->
 <script src="js/main.js"></script>
-<script>
-/* ---- Mini-players Artistes ---- */
-const _wcPlayers = {};
-
-function wcPlay(artistId, src, playerId) {
-  const audio = document.getElementById('audio-' + artistId);
-  const btn   = document.querySelector('#' + playerId + ' .ah-play-btn');
-  const pauseIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
-  const playIcon  = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>';
-
-  // Stopper tous les autres
-  Object.entries(_wcPlayers).forEach(([id, a]) => {
-    if (id !== artistId) {
-      a.pause();
-      const ob = document.querySelector('#player-' + id + ' .ah-play-btn');
-      if (ob) { ob.innerHTML = playIcon; ob.classList.remove('playing'); }
-    }
-  });
-  // Stopper global prod
-  const gAudio = document.getElementById('wc-global-audio');
-  if (gAudio) { gAudio.pause(); }
-  document.querySelectorAll('.prod-row.wc-playing').forEach(r => r.classList.remove('wc-playing'));
-
-  if (!_wcPlayers[artistId]) _wcPlayers[artistId] = audio;
-
-  if (!audio.paused && audio.src.includes(src.split('/').pop())) {
-    audio.pause();
-    btn.innerHTML = playIcon;
-    btn.classList.remove('playing');
-  } else {
-    audio.src = src;
-    audio.play();
-    btn.innerHTML = pauseIcon;
-    btn.classList.add('playing');
-    audio.onended = () => { btn.innerHTML = playIcon; btn.classList.remove('playing'); };
-  }
-}
-
-/* ---- Productions WinConcept player ---- */
-let _wcCurrentProd = null;
-
-function wcPlayProd(row, src) {
-  const gAudio = document.getElementById('wc-global-audio');
-  const pauseIcon = '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
-  const playIcon  = '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>';
-
-  // Stopper les mini-players artiste
-  ['diablit','simba'].forEach(id => {
-    const a = document.getElementById('audio-' + id);
-    if (a) { a.pause(); }
-    const b = document.querySelector('#player-' + id + ' .ah-play-btn');
-    if (b) { b.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>'; b.classList.remove('playing'); }
-  });
-
-  if (_wcCurrentProd === row && !gAudio.paused) {
-    gAudio.pause();
-    row.classList.remove('wc-playing');
-    row.querySelector('.prod-play-btn').innerHTML = playIcon;
-    _wcCurrentProd = null;
-    return;
-  }
-
-  if (_wcCurrentProd) {
-    _wcCurrentProd.classList.remove('wc-playing');
-    _wcCurrentProd.querySelector('.prod-play-btn').innerHTML = playIcon;
-  }
-
-  gAudio.src = src;
-  gAudio.play();
-  row.classList.add('wc-playing');
-  row.querySelector('.prod-play-btn').innerHTML = pauseIcon;
-  _wcCurrentProd = row;
-  gAudio.onended = () => {
-    row.classList.remove('wc-playing');
-    row.querySelector('.prod-play-btn').innerHTML = playIcon;
-    _wcCurrentProd = null;
-  };
-}
-</script>
 <!-- Vercel Analytics -->
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
