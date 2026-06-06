@@ -1340,3 +1340,26 @@ h1, h2, h3, h4, h5 {
   0%, 100% { transform: scale(1); opacity: 0.6; }
   50%       { transform: scale(1.25); opacity: 0; }
 }
+
+/* ===================== ICÔNES SVG (remplacent les emojis) ===================== */
+.ico-inline { width: 1.05em; height: 1.05em; vertical-align: -0.18em; margin-right: 0.5em; flex-shrink: 0; }
+.ico-badge  { width: 13px; height: 13px; vertical-align: -0.12em; margin-right: 5px; }
+
+.location-icon svg { width: 20px; height: 20px; color: var(--primary); }
+.step-icon svg     { width: 28px; height: 28px; color: var(--primary); }
+.contact-icon svg  { width: 22px; height: 22px; color: var(--primary); }
+.author-avatar svg { width: 24px; height: 24px; color: #fff; }
+.social-btn svg    { width: 20px; height: 20px; display: block; }
+.blog-card-img svg { width: 54px; height: 54px; color: rgba(255,255,255,0.30); }
+.nkumu-banner-icon svg { width: 46px; height: 46px; color: var(--primary); }
+.kadji-tag svg     { width: 14px; height: 14px; vertical-align: -0.12em; margin-right: 6px; }
+.ah-badge svg      { color: var(--primary); }
+
+.portfolio-item-bg svg { width: 60px; height: 60px; color: rgba(255,255,255,0.16); transition: var(--transition); }
+.portfolio-item:hover .portfolio-item-bg svg { color: var(--primary); }
+
+.about-img-wrap svg { width: 96px; height: 96px; color: rgba(0,183,243,0.40); }
+
+/* Couleur des icônes réseaux sociaux (visibles sur fond sombre, noires au survol) */
+.social-btn { color: rgba(255,255,255,0.78); }
+.social-btn:hover svg { color: var(--black); }
