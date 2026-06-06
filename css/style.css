@@ -795,45 +795,59 @@ h1, h2, h3, h4, h5 {
 
 .portfolio-item:first-child { grid-column: span 2; }
 
+/* Badge icône en coin haut-gauche (gradient lumineux, ne chevauche plus le texte) */
 .portfolio-item-bg {
   position: absolute;
-  inset: 0;
+  top: 22px; right: 22px;
+  width: 58px; height: 58px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  box-shadow: 0 10px 28px rgba(0,183,243,0.38), inset 0 1px 0 rgba(255,255,255,0.30);
+  z-index: 3;
   transition: var(--transition);
 }
 
-.portfolio-item:hover .portfolio-item-bg { transform: scale(1.05); }
+.portfolio-item:hover .portfolio-item-bg {
+  transform: translateY(-3px) scale(1.06) rotate(-3deg);
+  box-shadow: 0 16px 38px rgba(0,183,243,0.55), inset 0 1px 0 rgba(255,255,255,0.4);
+}
 
+/* Texte TOUJOURS visible (lisible sans survol) */
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(3,8,14,0.97) 0%, rgba(3,8,14,0.82) 38%, rgba(3,8,14,0.25) 68%, rgba(3,8,14,0.05) 100%);
   padding: 28px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  opacity: 0;
+  opacity: 1;
   transition: var(--transition);
 }
 
-.portfolio-item:hover .portfolio-overlay { opacity: 1; }
+.portfolio-item:hover .portfolio-overlay {
+  background: linear-gradient(to top, rgba(3,8,14,0.98) 0%, rgba(3,12,20,0.88) 42%, rgba(0,60,90,0.25) 75%, transparent 100%);
+}
 
 .portfolio-cat {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--primary);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .portfolio-name {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 8px;
 }
 
 /* ---------- STATS ---------- */
@@ -1355,8 +1369,7 @@ h1, h2, h3, h4, h5 {
 .kadji-tag svg     { width: 14px; height: 14px; vertical-align: -0.12em; margin-right: 6px; }
 .ah-badge svg      { color: var(--primary); }
 
-.portfolio-item-bg svg { width: 60px; height: 60px; color: rgba(255,255,255,0.16); transition: var(--transition); }
-.portfolio-item:hover .portfolio-item-bg svg { color: var(--primary); }
+.portfolio-item-bg svg { width: 28px; height: 28px; color: #00131f; stroke-width: 2; }
 
 .about-img-wrap svg { width: 96px; height: 96px; color: rgba(0,183,243,0.40); }
 
