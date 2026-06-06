@@ -423,299 +423,367 @@
   </div>
 </section>
 
-<!-- ===================== DIVISIONS ===================== -->
+<!-- ===================== SERVICES ===================== -->
 <section class="divisions section" id="divisions" aria-labelledby="divisions-title">
   <div class="container">
 
     <div class="section-header reveal">
-      <span class="section-label">Nos divisions</span>
+      <span class="section-label">Nos services</span>
       <h2 class="section-title" id="divisions-title">
-        Tout ce dont vous avez besoin, <span class="gradient-text">au même endroit</span>
+        Six expertises, <span class="gradient-text">une seule maison</span>
       </h2>
       <p class="section-subtitle">
-        Six pôles d'excellence pour couvrir l'ensemble de votre parcours créatif et numérique.
+        De la production musicale à la cybersécurité : WinConcept Industry couvre l'ensemble de votre parcours créatif et numérique.
       </p>
     </div>
 
-    <!-- Tab buttons -->
-    <div class="division-tabs" role="tablist" aria-label="Divisions WinConcept">
-      <button class="tab-btn active" data-tab="tab-studios"   role="tab" aria-selected="true"  aria-controls="tab-studios">🎙️ Studios</button>
-      <button class="tab-btn"        data-tab="tab-distrib"   role="tab" aria-selected="false" aria-controls="tab-distrib">🌍 Distribution</button>
-      <button class="tab-btn"        data-tab="tab-management" role="tab" aria-selected="false" aria-controls="tab-management">🎤 Management</button>
-      <button class="tab-btn"        data-tab="tab-digital"   role="tab" aria-selected="false" aria-controls="tab-digital">💻 Digital</button>
-      <button class="tab-btn"        data-tab="tab-marketing" role="tab" aria-selected="false" aria-controls="tab-marketing">📣 Marketing</button>
-      <button class="tab-btn"        data-tab="tab-cyber"     role="tab" aria-selected="false" aria-controls="tab-cyber">🔐 Cyber</button>
-    </div>
+    <!-- Services grid - inspired by Maya Media professional layout -->
+    <style>
+      .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:80px; }
+      .svc-card { position:relative; background:#050a10; border:1px solid rgba(255,255,255,0.06); padding:40px 36px 44px; display:flex; flex-direction:column; gap:0; transition:border-color .3s, transform .3s, box-shadow .3s; cursor:default; overflow:hidden; }
+      .svc-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(0,183,243,0.04),transparent); opacity:0; transition:opacity .3s; pointer-events:none; }
+      .svc-card:hover { border-color:rgba(0,183,243,0.35); transform:translateY(-4px); box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(0,183,243,0.2); z-index:2; }
+      .svc-card:hover::before { opacity:1; }
+      .svc-num { font-family:'Montserrat',sans-serif; font-size:.65rem; font-weight:800; letter-spacing:.22em; color:rgba(0,183,243,0.5); margin-bottom:24px; }
+      .svc-icon { width:52px; height:52px; margin-bottom:20px; color:var(--primary); }
+      .svc-icon svg { width:100%; height:100%; }
+      .svc-name { font-family:'Montserrat',sans-serif; font-size:1.3rem; font-weight:800; color:#fff; margin-bottom:10px; line-height:1.2; }
+      .svc-name span { color:var(--primary); }
+      .svc-desc { font-size:.88rem; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:24px; }
+      .svc-divider { width:40px; height:2px; background:var(--primary); margin-bottom:24px; transition:width .3s; }
+      .svc-card:hover .svc-divider { width:80px; }
+      .svc-list { list-style:none; padding:0; margin:0 0 32px; display:flex; flex-direction:column; gap:8px; flex:1; }
+      .svc-list li { font-size:.82rem; color:rgba(255,255,255,0.6); display:flex; align-items:flex-start; gap:10px; line-height:1.5; }
+      .svc-list li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--primary); flex-shrink:0; margin-top:6px; }
+      .svc-cta { display:inline-flex; align-items:center; gap:8px; font-size:.8rem; font-weight:700; color:var(--primary); text-decoration:none; letter-spacing:.04em; transition:gap .2s; padding:10px 0; border-top:1px solid rgba(255,255,255,0.07); }
+      .svc-cta:hover { gap:14px; }
+      .svc-cta svg { width:16px; height:16px; transition:transform .2s; }
+      .svc-cta:hover svg { transform:translateX(4px); }
 
-    <!-- STUDIOS -->
-    <div class="tab-panel active" id="tab-studios" role="tabpanel">
-      <div class="division-content">
-        <div class="division-info">
-          <h3>WinConcept <span class="gradient-text">Studios</span></h3>
-          <p>La référence en production musicale et audiovisuelle au Cameroun. De votre premier accord jusqu'au streaming mondial, nous façonnons chaque projet avec une exigence absolue.</p>
-          <ul class="service-list">
-            <li class="service-item">Enregistrement professionnel</li>
-            <li class="service-item">Mixage &amp; mastering</li>
-            <li class="service-item">Beatmaking &amp; production musicale</li>
-            <li class="service-item">Coaching vocal</li>
-            <li class="service-item">Ghostwriting</li>
-            <li class="service-item">Formation artistique</li>
-            <li class="service-item">Voix off</li>
-            <li class="service-item">Spot publicitaire (radio / TV)</li>
-            <li class="service-item">Générique personnalisé</li>
-            <li class="service-item">Réalisation de clip vidéo</li>
-            <li class="service-item">Shooting photo professionnel</li>
-            <li class="service-item">Couverture événementielle</li>
-            <li class="service-item">Création de contenu digital</li>
-          </ul>
-          <div style="margin-top:32px;">
-            <a href="#contact" class="btn btn-primary">Réserver une session</a>
-          </div>
+      /* Packages */
+      .pkg-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:80px; }
+      .pkg-card { background:#050a10; border:1px solid rgba(255,255,255,0.06); padding:48px 44px; position:relative; overflow:hidden; }
+      .pkg-card.pkg-gold { border-color:rgba(212,168,67,0.25); background:linear-gradient(135deg,#0a0900,#050a10); }
+      .pkg-card.pkg-gold::before { content:''; position:absolute; top:0; right:0; width:200px; height:200px; background:radial-gradient(circle,rgba(212,168,67,0.08),transparent 70%); pointer-events:none; }
+      .pkg-tier { font-size:.65rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; margin-bottom:12px; }
+      .pkg-name { font-family:'Montserrat',sans-serif; font-size:2rem; font-weight:900; margin-bottom:6px; }
+      .pkg-sub { font-size:.85rem; color:rgba(255,255,255,0.45); margin-bottom:32px; line-height:1.6; }
+      .pkg-features { list-style:none; padding:0; margin:0 0 36px; display:flex; flex-direction:column; gap:12px; }
+      .pkg-features li { font-size:.85rem; color:rgba(255,255,255,0.65); display:flex; align-items:flex-start; gap:12px; line-height:1.6; }
+      .pkg-check { width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+
+      @media(max-width:1100px){ .svc-grid{ grid-template-columns:repeat(2,1fr); } }
+      @media(max-width:680px){ .svc-grid{ grid-template-columns:1fr; } .pkg-grid{ grid-template-columns:1fr; } .svc-card{ padding:32px 28px; } }
+    </style>
+
+    <div class="svc-grid reveal">
+
+
+      <!-- 01 STUDIOS -->
+      <div class="svc-card">
+        <div class="svc-num">01 &mdash; STUDIOS &amp; PRODUCTION</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+          </svg>
         </div>
-        <div class="division-visual">
-          <div class="division-icon-big">🎚️</div>
-          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:20px; color:var(--white);">Pourquoi WinConcept Studios ?</h4>
-          <div style="display:flex; flex-direction:column; gap:14px;">
-            <div style="display:flex; align-items:flex-start; gap:14px;">
-              <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,183,243,0.15);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🌍</div>
-              <div>
-                <div style="font-weight:700;font-family:'Montserrat',sans-serif;font-size:0.9rem;margin-bottom:3px;">Son de référence internationale</div>
-                <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">Des productions qui rivalisent avec les standards mondiaux.</div>
-              </div>
-            </div>
-            <div style="display:flex; align-items:flex-start; gap:14px;">
-              <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,183,243,0.15);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🎯</div>
-              <div>
-                <div style="font-weight:700;font-family:'Montserrat',sans-serif;font-size:0.9rem;margin-bottom:3px;">Studio son &amp; image sous un même toit</div>
-                <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">Musique, vidéo, photo et contenu : tout se passe ici.</div>
-              </div>
-            </div>
-            <div style="display:flex; align-items:flex-start; gap:14px;">
-              <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,183,243,0.15);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🚀</div>
-              <div>
-                <div style="font-weight:700;font-family:'Montserrat',sans-serif;font-size:0.9rem;margin-bottom:3px;">De la création au lancement</div>
-                <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">Production, distribution et promotion intégrées.</div>
-              </div>
-            </div>
-            <div style="display:flex; align-items:flex-start; gap:14px;">
-              <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,183,243,0.15);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">⭐</div>
-              <div>
-                <div style="font-weight:700;font-family:'Montserrat',sans-serif;font-size:0.9rem;margin-bottom:3px;">Accompagnement sur mesure</div>
-                <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">Artistes, marques, entreprises : chaque projet est unique.</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="svc-name">WinConcept <span>Studios</span></div>
+        <p class="svc-desc">La référence en production musicale et audiovisuelle au Cameroun. De votre premier accord au streaming mondial, nous façonnons chaque projet avec une exigence absolue.</p>
+        <div class="svc-divider"></div>
+        <ul class="svc-list">
+          <li>Enregistrement professionnel (voix, instruments)</li>
+          <li>Mixage et mastering aux standards internationaux</li>
+          <li>Beatmaking et production musicale originale</li>
+          <li>Coaching vocal et développement artistique</li>
+          <li>Ghostwriting et direction artistique</li>
+          <li>Voix off, jingles radio et spots TV</li>
+          <li>Réalisation de clips vidéo officiels</li>
+          <li>Shooting photo professionnel (pochettes, presse)</li>
+          <li>Couverture événementielle complète</li>
+          <li>Création de contenu digital (reels, shorts)</li>
+          <li>Génériques et musiques de fond sur mesure</li>
+        </ul>
+        <a href="#contact" class="svc-cta">Réserver une session <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-    </div>
 
-    <!-- DISTRIBUTION -->
-    <div class="tab-panel" id="tab-distrib" role="tabpanel">
-      <div class="division-content">
-        <div class="division-info">
-          <h3>WinConcept <span class="gradient-text">Distribution</span></h3>
-          <p>Distribuez votre musique sur toutes les plateformes mondiales. Monétisez votre art et gérez vos droits avec transparence et efficacité.</p>
-          <ul class="service-list">
-            <li class="service-item">Publication sur toutes les plateformes</li>
-            <li class="service-item">Monétisation des streams</li>
-            <li class="service-item">Gestion des droits d'auteur</li>
-            <li class="service-item">Rapports de performance détaillés</li>
-            <li class="service-item">Collecte des redevances</li>
-            <li class="service-item">Pitching éditorial Spotify</li>
-          </ul>
-          <div style="margin-top:32px;">
-            <a href="#contact" class="btn btn-primary">Distribuer ma musique</a>
-          </div>
+      <!-- 02 DISTRIBUTION -->
+      <div class="svc-card">
+        <div class="svc-num">02 &mdash; DISTRIBUTION DIGITALE</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
         </div>
-        <div class="division-visual">
-          <div class="division-icon-big">🌍</div>
-          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:20px;">Plateformes partenaires</h4>
-          <div class="platform-grid">
-            <div class="platform-chip">🟢 Spotify</div>
-            <div class="platform-chip">🍎 Apple Music</div>
-            <div class="platform-chip">🟣 Deezer</div>
-            <div class="platform-chip">🟠 Amazon Music</div>
-            <div class="platform-chip">🎵 TikTok</div>
-            <div class="platform-chip">🔴 YouTube</div>
-          </div>
-        </div>
+        <div class="svc-name">WinConcept <span>Distribution</span></div>
+        <p class="svc-desc">Votre musique sur toutes les plateformes mondiales. Monétisez votre art, gérez vos droits et collectez vos redevances avec une transparence totale.</p>
+        <div class="svc-divider"></div>
+        <ul class="svc-list">
+          <li>Publication sur Spotify, Apple Music, Deezer, Amazon, Tidal</li>
+          <li>Distribution YouTube Music, TikTok et toutes plateformes majeures</li>
+          <li>Monétisation des streams et collecte des redevances</li>
+          <li>Gestion et protection des droits d'auteur (SOCAM)</li>
+          <li>Rapports de performance détaillés et en temps réel</li>
+          <li>Pitching éditorial Spotify (playlists officielles)</li>
+          <li>Gestion des codes ISRC et UPC</li>
+          <li>Distribution physique (CD, vinyle) sur demande</li>
+          <li>Pre-save et stratégie de lancement optimisée</li>
+        </ul>
+        <a href="#contact" class="svc-cta">Distribuer ma musique <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-    </div>
 
-    <!-- MANAGEMENT -->
-    <div class="tab-panel" id="tab-management" role="tabpanel">
-      <div class="division-content">
-        <div class="division-info">
-          <h3>WinConcept <span class="gradient-text">Management</span></h3>
-          <p>Développez votre carrière artistique avec un accompagnement stratégique personnalisé. Nous construisons votre image et vos opportunités.</p>
-          <ul class="service-list">
-            <li class="service-item">Développement artistique</li>
-            <li class="service-item">Gestion de carrière</li>
-            <li class="service-item">Image de marque artistique</li>
-            <li class="service-item">Relations médias &amp; presse</li>
-            <li class="service-item">Booking &amp; événements</li>
-            <li class="service-item">Accompagnement stratégique</li>
-          </ul>
-          <div style="margin-top:32px;">
-            <a href="#contact" class="btn btn-primary">Être géré par WinConcept</a>
-          </div>
+      <!-- 03 MANAGEMENT -->
+      <div class="svc-card">
+        <div class="svc-num">03 &mdash; MANAGEMENT ARTISTIQUE</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
         </div>
-        <div class="division-visual">
-          <div class="division-icon-big">🎤</div>
-          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:20px;">Artistes sous management</h4>
-          <div class="artist-cards">
-            <div class="artist-card">
-              <div class="artist-avatar">🎤</div>
-              <div>
-                <div class="artist-name">Diablit</div>
-                <div class="artist-role">Artiste – Afropop / Urban</div>
-              </div>
-            </div>
-            <div class="artist-card">
-              <div class="artist-avatar">🦁</div>
-              <div>
-                <div class="artist-name">Simba Draken</div>
-                <div class="artist-role">Artiste – Afrobeats / R&B</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="svc-name">WinConcept <span>Management</span></div>
+        <p class="svc-desc">Un accompagnement stratégique global pour bâtir une carrière durable. Nous construisons votre image, vos opportunités et votre impact sur le long terme.</p>
+        <div class="svc-divider"></div>
+        <ul class="svc-list">
+          <li>Plan de carrière personnalisé et objectifs mesurables</li>
+          <li>Construction et gestion de l'image de marque artistique</li>
+          <li>Relations presse, médias et influenceurs</li>
+          <li>Booking concerts, festivals et événements privés</li>
+          <li>Négociation et gestion des contrats discographiques</li>
+          <li>Stratégie de lancement de singles et d'albums</li>
+          <li>Développement des collaborations (features, partenariats)</li>
+          <li>Accompagnement réseaux sociaux et gestion de communauté</li>
+          <li>Veille concurrentielle et positionnement de marché</li>
+        </ul>
+        <a href="#contact" class="svc-cta">Etre managé par WinConcept <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-    </div>
 
-    <!-- DIGITAL -->
-    <div class="tab-panel" id="tab-digital" role="tabpanel">
-      <div class="division-content">
-        <div class="division-info">
-          <h3>WinConcept <span class="gradient-text">Digital</span></h3>
-          <p>Conception, réalisation et maintenance de sites dynamiques, bilingues et e-commerce. Hébergement, noms de domaine, adresses email professionnelles. Nous gérons votre présence en ligne de A à Z.</p>
-          <ul class="service-list">
-            <li class="service-item">Sites web dynamiques, bilingues &amp; e-commerce</li>
-            <li class="service-item">Landing pages &amp; sites vitrines sur mesure</li>
-            <li class="service-item">Hébergement &amp; gestion de noms de domaine</li>
-            <li class="service-item">Adresses email professionnelles</li>
-            <li class="service-item">Applications web &amp; mobiles</li>
-            <li class="service-item">Montage vidéo &amp; design infographie</li>
-            <li class="service-item">Webmarketing &amp; animation d'audience</li>
-            <li class="service-item">Data analytics &amp; mesure d'audience</li>
-          </ul>
-          <div style="margin-top:32px;">
-            <a href="#contact" class="btn btn-primary">Créer mon site web</a>
-          </div>
+      <!-- 04 DIGITAL -->
+      <div class="svc-card">
+        <div class="svc-num">04 &mdash; DIGITAL &amp; WEB</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <path d="M8 21h8M12 17v4"/>
+            <polyline points="8 10 12 6 16 10"/>
+          </svg>
         </div>
-        <div class="division-visual">
-          <div class="division-icon-big">💻</div>
-          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:12px;">Technologies &amp; Outils</h4>
-          <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:20px;">
-            Google Ads, Analytics, Emailing, SEO : des outils éprouvés pour des résultats concrets et mesurables.
-          </p>
-          <div class="platform-grid">
-            <div class="platform-chip">React / Next.js</div>
-            <div class="platform-chip">WordPress</div>
-            <div class="platform-chip">Shopify</div>
-            <div class="platform-chip">Google Ads</div>
-            <div class="platform-chip">Analytics</div>
-            <div class="platform-chip">Node.js</div>
-          </div>
-        </div>
+        <div class="svc-name">WinConcept <span>Digital</span></div>
+        <p class="svc-desc">Conception, réalisation et maintenance de sites web professionnels, bilingues et e-commerce. Hébergement, domaine, email pro : votre présence en ligne de A à Z.</p>
+        <div class="svc-divider"></div>
+        <ul class="svc-list">
+          <li>Sites web dynamiques, bilingues (FR/EN) et e-commerce</li>
+          <li>Landing pages et sites vitrines sur mesure</li>
+          <li>Applications web et mobiles (iOS et Android)</li>
+          <li>Hébergement, noms de domaine et emails professionnels</li>
+          <li>SEO et référencement naturel (Google, Bing)</li>
+          <li>Référencement payant SEA (Google Ads, Meta Ads)</li>
+          <li>Data analytics et mesure d'audience (Google Analytics)</li>
+          <li>Montage vidéo et design infographie</li>
+          <li>Maintenance, mises à jour et support technique</li>
+          <li>Audit de site web et optimisation des performances</li>
+        </ul>
+        <a href="#contact" class="svc-cta">Lancer mon projet digital <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-    </div>
 
-    <!-- MARKETING -->
-    <div class="tab-panel" id="tab-marketing" role="tabpanel">
-      <div class="division-content">
-        <div class="division-info">
-          <h3>WinConcept <span class="gradient-text">Marketing</span></h3>
-          <p>Marketing stratégique, veille concurrentielle, brand content et campagnes multi-canal. Nous positionnons votre marque de manière gagnante grâce à une méthodologie socio-pratique axée sur la valeur ajoutée.</p>
-          <ul class="service-list">
-            <li class="service-item">Marketing stratégique &amp; veille concurrentielle</li>
-            <li class="service-item">Brand content &amp; identité graphique</li>
-            <li class="service-item">Facebook, Instagram &amp; TikTok Ads</li>
-            <li class="service-item">Google Ads (Search, Display &amp; YouTube)</li>
-            <li class="service-item">Gestion &amp; animation des réseaux sociaux</li>
-            <li class="service-item">Promotion d'artistes &amp; de chansons</li>
-            <li class="service-item">Emailing &amp; campagnes de relance</li>
-            <li class="service-item">Affichage grand format &amp; flyers</li>
-          </ul>
-          <div style="margin-top:32px;">
-            <a href="#contact" class="btn btn-primary">Lancer une campagne</a>
-          </div>
+      <!-- 05 MARKETING -->
+      <div class="svc-card">
+        <div class="svc-num">05 &mdash; MARKETING &amp; COMMUNICATION</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
         </div>
-        <div class="division-visual">
-          <div class="division-icon-big">📣</div>
-          <h4 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; margin-bottom:12px;">Notre philosophie</h4>
-          <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.8; margin-bottom:20px;">
-            Nous n'utilisons pas la communication comme un outil de diffusion, mais comme un outil d'échange, de pouvoir et de persuasion pour maximiser votre impact.
-          </p>
-          <div class="platform-grid">
-            <div class="platform-chip">📘 Facebook</div>
-            <div class="platform-chip">📸 Instagram</div>
-            <div class="platform-chip">🎵 TikTok</div>
-            <div class="platform-chip">🔍 Google</div>
-            <div class="platform-chip">▶️ YouTube</div>
-            <div class="platform-chip">✉️ Emailing</div>
-          </div>
-        </div>
+        <div class="svc-name">WinConcept <span>Marketing</span></div>
+        <p class="svc-desc">Marketing stratégique, brand content, campagnes multi-canal et marketing d'influence. Nous positionnons votre marque comme une force sur le marché camerounais et international.</p>
+        <div class="svc-divider"></div>
+        <ul class="svc-list">
+          <li>Stratégie de marque et plan marketing global</li>
+          <li>Brand content et identité visuelle (logo, charte graphique)</li>
+          <li>Gestion et animation des réseaux sociaux (12 à 18 posts/semaine)</li>
+          <li>Campagnes Facebook, Instagram, TikTok et Snapchat Ads</li>
+          <li>Google Ads : Search, Display et YouTube</li>
+          <li>Marketing d'influence (réseau de 100+ créateurs formés)</li>
+          <li>Promotion artistes et sorties musicales (clips, singles)</li>
+          <li>Emailing, newsletters et campagnes de relance</li>
+          <li>Affichage grand format, flyers et supports print</li>
+          <li>Veille concurrentielle et benchmarking</li>
+          <li>Reporting mensuel et optimisation continue</li>
+        </ul>
+        <a href="#contact" class="svc-cta">Lancer une campagne <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-    </div>
 
-    <!-- CYBER -->
-    <div class="tab-panel" id="tab-cyber" role="tabpanel">
-      <div class="division-content">
-        <div class="division-info">
-          <h3>WinConcept <span class="gradient-text">Cyber</span></h3>
-          <p>Protégez votre entreprise avec des solutions de cybersécurité adaptées à vos risques. De l'audit à la formation, nous sécurisons votre espace numérique.</p>
-          <ul class="service-list">
-            <li class="service-item">Évaluation des risques &amp; conformité</li>
-            <li class="service-item">Tests d'intrusion (Pentesting)</li>
-            <li class="service-item">Simulations d'attaques</li>
-            <li class="service-item">Surveillance &amp; détection</li>
-            <li class="service-item">Réponse aux incidents</li>
-            <li class="service-item">Formation &amp; sensibilisation</li>
-          </ul>
-          <div style="margin-top:32px;">
-            <a href="#contact" class="btn btn-primary">Sécuriser mon entreprise</a>
-          </div>
+      <!-- 06 CYBER -->
+      <div class="svc-card">
+        <div class="svc-num">06 &mdash; CYBERSECURITE</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
         </div>
-        <div class="division-visual">
-          <div class="cyber-grid">
-
-            <div class="cyber-card">
-              <div class="cyber-card-icon">🏛️</div>
-              <div class="cyber-card-title">Gouvernance & Risques</div>
-              <div class="cyber-card-desc">
-                Évaluation des risques, politiques de sécurité, conformité réglementaire.
-              </div>
-            </div>
-
-            <div class="cyber-card">
-              <div class="cyber-card-icon">⚔️</div>
-              <div class="cyber-card-title">Sécurité offensive</div>
-              <div class="cyber-card-desc">
-                Tests d'intrusion, simulations d'attaques, évaluation de vulnérabilités.
-              </div>
-            </div>
-
-            <div class="cyber-card">
-              <div class="cyber-card-icon">🛡️</div>
-              <div class="cyber-card-title">Sécurité défensive</div>
-              <div class="cyber-card-desc">
-                Surveillance 24/7, détection d'intrusions, réponse aux incidents.
-              </div>
-            </div>
-
-            <div class="cyber-card">
-              <div class="cyber-card-icon">🎓</div>
-              <div class="cyber-card-title">Sensibilisation</div>
-              <div class="cyber-card-desc">
-                Formations, simulations de phishing, ateliers collaborateurs.
-              </div>
-            </div>
-
-          </div>
-        </div>
+        <div class="svc-name">WinConcept <span>Cyber</span></div>
+        <p class="svc-desc">Protégez votre entreprise avec des solutions de cybersécurité adaptées à vos risques réels. De l'audit à la formation, nous sécurisons votre espace numérique.</p>
+        <div class="svc-divider"></div>
+        <ul class="svc-list">
+          <li>Audit de sécurité et évaluation des risques</li>
+          <li>Tests d'intrusion (Pentesting) infrastructure et web</li>
+          <li>Simulations d'attaques et phishing controlé</li>
+          <li>Surveillance et détection des menaces 24h/7</li>
+          <li>Réponse aux incidents et forensic numérique</li>
+          <li>Mise en conformité (RGPD, ISO 27001, NIS2)</li>
+          <li>Politique de sécurité et gouvernance SI</li>
+          <li>Formation et sensibilisation des équipes</li>
+          <li>Protection des données et sauvegarde sécurisée</li>
+          <li>Conseil en architecture sécurité cloud et on-premise</li>
+        </ul>
+        <a href="#contact" class="svc-cta">Sécuriser mon entreprise <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
+
+    </div><!-- /svc-grid -->
+
+    <!-- Packages KNM Digital -->
+    <div class="section-header reveal" style="margin-bottom:48px;">
+      <span class="section-label">Offres Marketing</span>
+      <h3 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem);">
+        Nos packages <span class="gradient-text">réseaux sociaux</span>
+      </h3>
+      <p class="section-subtitle">Des formules clés en main pour booster votre visibilité sur tous les canaux digitaux.</p>
     </div>
+
+    <div class="pkg-grid reveal reveal-delay-1">
+
+      <!-- PREMIUM -->
+      <div class="pkg-card">
+        <div class="pkg-tier" style="color:var(--primary);">Pack Premium</div>
+        <div class="pkg-name" style="color:#fff;">Premium</div>
+        <p class="pkg-sub">La formule complète pour une présence digitale solide et régulière sur 5 plateformes.</p>
+        <ul class="pkg-features">
+          <li>
+            <div class="pkg-check" style="background:rgba(0,183,243,0.12); border:1px solid rgba(0,183,243,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B7F3" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Facebook, Instagram, Twitter/X, LinkedIn et YouTube</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(0,183,243,0.12); border:1px solid rgba(0,183,243,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B7F3" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Mise en place d'une stratégie globale avec objectifs définis</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(0,183,243,0.12); border:1px solid rgba(0,183,243,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B7F3" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>12 publications par semaine sur l'ensemble des plateformes</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(0,183,243,0.12); border:1px solid rgba(0,183,243,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B7F3" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>2 spots publicitaires produits par mois</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(0,183,243,0.12); border:1px solid rgba(0,183,243,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B7F3" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>10 visuels de communication créés par semaine</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(0,183,243,0.12); border:1px solid rgba(0,183,243,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B7F3" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Modération messages et commentaires sur toutes les plateformes</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(0,183,243,0.12); border:1px solid rgba(0,183,243,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B7F3" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Sponsoring d'un mois inclus</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(0,183,243,0.12); border:1px solid rgba(0,183,243,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B7F3" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Rapport mensuel de performance détaillé</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(0,183,243,0.12); border:1px solid rgba(0,183,243,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#00B7F3" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Conception de tout type de support graphique</span>
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Choisir Premium</a>
+      </div>
+
+      <!-- GOLD -->
+      <div class="pkg-card pkg-gold">
+        <div style="position:absolute; top:24px; right:24px; background:rgba(212,168,67,0.15); border:1px solid rgba(212,168,67,0.4); border-radius:50px; padding:4px 14px; font-size:.62rem; font-weight:800; letter-spacing:.14em; color:#D4A843;">RECOMMANDE</div>
+        <div class="pkg-tier" style="color:#D4A843;">Pack Gold</div>
+        <div class="pkg-name" style="color:#D4A843;">Gold</div>
+        <p class="pkg-sub">La formule maximale pour une croissance agressive et une domination digitale sur votre marché.</p>
+        <ul class="pkg-features">
+          <li>
+            <div class="pkg-check" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Facebook, Instagram, Twitter/X, LinkedIn et YouTube</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Stratégie globale premium avec objectifs et KPIs définis</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span><strong style="color:#D4A843;">18 publications</strong> par semaine (vs 12 en Premium)</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span><strong style="color:#D4A843;">4 spots publicitaires</strong> produits par mois (vs 2)</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span><strong style="color:#D4A843;">15 visuels</strong> de communication par semaine (vs 10)</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Modération complète sur toutes les plateformes</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span><strong style="color:#D4A843;">Sponsoring de toutes les plateformes</strong> pendant un mois</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Rapport mensuel avancé avec analyses et recommandations</span>
+          </li>
+          <li>
+            <div class="pkg-check" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4A843" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Conception illimitée de supports graphiques premium</span>
+          </li>
+        </ul>
+        <a href="#contact" class="btn" style="background:#D4A843; color:#000; font-weight:800;">Choisir Gold</a>
+      </div>
+
+    </div><!-- /pkg-grid -->
 
   </div>
 </section>
