@@ -1376,3 +1376,86 @@ h1, h2, h3, h4, h5 {
 /* Couleur des icônes réseaux sociaux (visibles sur fond sombre, noires au survol) */
 .social-btn { color: rgba(255,255,255,0.78); }
 .social-btn:hover svg { color: var(--black); }
+
+/* ===================== RESPONSIVE / OPTIMISATION MOBILE ===================== */
+html, body { overflow-x: hidden; max-width: 100%; }
+img, svg, video, canvas, iframe { max-width: 100%; }
+
+/* Les enfants flex peuvent rétrécir (évite les débordements de longues chaînes) */
+.contact-item > div, .nkumu-banner-text, .ah-body, .founder-content, .svc-card { min-width: 0; }
+.contact-value, .contact-value a, .svc-list li, .footer-desc, .ah-bio, .founder-content p { overflow-wrap: anywhere; }
+
+/* ---- Tablette (<= 900px) ---- */
+@media (max-width: 900px) {
+  .kadji-feature { grid-template-columns: 1fr; gap: 24px; }
+  .nkumu-banner-content { gap: 22px; }
+}
+
+/* ---- Mobile (<= 600px) ---- */
+@media (max-width: 600px) {
+  .container { padding: 0 18px; }
+  .section-title { font-size: clamp(1.55rem, 7vw, 2.1rem); }
+  .section-subtitle { font-size: 0.92rem; }
+
+  /* Fondateur */
+  .founder-inner { grid-template-columns: 1fr; gap: 30px; }
+  .founder-photo-wrap { max-width: 280px; margin: 0 auto; }
+  .founder-name { font-size: clamp(1.9rem, 8.5vw, 2.5rem); }
+  .founder-quote { font-size: 1.1rem; padding-left: 16px; }
+
+  /* Artistes */
+  .artists-duo { grid-template-columns: 1fr; gap: 20px; }
+  .ah-ctas { flex-direction: column; }
+  .ah-ctas a { width: 100%; }
+
+  /* Kadji */
+  .kadji-feature { padding: 18px; gap: 18px; }
+  .kadji-title { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+  .kadji-feature .ah-ctas { flex-direction: column; }
+  .kadji-feature .ah-ctas a { width: 100%; text-align: center; }
+
+  /* NKUMU banner */
+  .nkumu-banner { padding: 26px 20px; }
+  .nkumu-banner-content { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .nkumu-banner-icon { font-size: 2.6rem; }
+  .nkumu-banner-cta { width: 100%; text-align: center; justify-content: center; }
+
+  /* Services */
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-card { padding: 28px 22px; }
+  .svc-name { font-size: 1.2rem; }
+  .pkg-grid { grid-template-columns: 1fr; }
+  .pkg-card { padding: 30px 22px; }
+  .pkg-name { font-size: 1.7rem; }
+
+  /* Portfolio */
+  .portfolio-grid { grid-template-columns: 1fr; gap: 16px; }
+  .portfolio-item, .portfolio-item:first-child { grid-column: span 1; }
+  .portfolio-item-bg { width: 48px; height: 48px; top: 16px; right: 16px; border-radius: 13px; }
+  .portfolio-item-bg svg { width: 23px; height: 23px; }
+  .portfolio-name { font-size: 1.15rem; }
+  .portfolio-overlay { padding: 22px; }
+
+  /* Process */
+  .process-track { grid-template-columns: 1fr 1fr; row-gap: 36px; }
+
+  /* Contact */
+  .contact-item { gap: 14px; }
+  .contact-icon { width: 46px; height: 46px; }
+  .contact-form { padding: 24px 18px; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+
+  /* Blog */
+  .blog-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Très petits écrans (<= 380px) ---- */
+@media (max-width: 380px) {
+  .container { padding: 0 14px; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .platform-grid { grid-template-columns: 1fr 1fr; }
+  .process-track { grid-template-columns: 1fr; }
+  .nav-logo-text { font-size: 0.95rem; }
+}
