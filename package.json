@@ -1,0 +1,9 @@
+{
+  "name": "winconcept-industry",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WinConcept Industry - site vitrine + API formulaire de contact",
+  "dependencies": {
+    "@vercel/postgres": "^0.10.0"
+  }
+}

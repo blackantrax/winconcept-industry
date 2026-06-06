@@ -121,17 +121,54 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- Contact form ---- */
   const contactForm = document.querySelector('.contact-form form');
   if (contactForm) {
-    contactForm.addEventListener('submit', e => {
+    contactForm.addEventListener('submit', async e => {
       e.preventDefault();
       const btn = contactForm.querySelector('.form-submit');
       const original = btn.innerHTML;
-      btn.innerHTML = '✓ Message envoyé !';
-      btn.style.background = '#22c55e';
-      setTimeout(() => {
-        btn.innerHTML = original;
-        btn.style.background = '';
-        contactForm.reset();
-      }, 3500);
+
+      // Validation basique
+      const get = n => (contactForm.querySelector('[name="' + n + '"]')?.value || '').trim();
+      const payload = {
+        firstname: get('firstname'),
+        lastname:  get('lastname'),
+        email:     get('email'),
+        phone:     get('phone'),
+        service:   get('service'),
+        message:   get('message'),
+      };
+      if (!payload.firstname || !payload.lastname || !payload.message) {
+        btn.innerHTML = 'Remplis les champs requis';
+        btn.style.background = '#ef4444';
+        setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; }, 2500);
+        return;
+      }
+
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      btn.innerHTML = 'Envoi en cours...';
+
+      try {
+        const r = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await r.json().catch(() => ({}));
+        if (r.ok && data.ok) {
+          btn.innerHTML = '✓ Message envoyé !';
+          btn.style.background = '#22c55e';
+          contactForm.reset();
+        } else {
+          throw new Error(data.error || 'erreur');
+        }
+      } catch (err) {
+        btn.innerHTML = 'Erreur, réessayez ou WhatsApp';
+        btn.style.background = '#ef4444';
+      } finally {
+        btn.disabled = false;
+        btn.style.opacity = '';
+        setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; }, 4000);
+      }
     });
   }
 
